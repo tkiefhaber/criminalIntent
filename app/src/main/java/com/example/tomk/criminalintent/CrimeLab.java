@@ -8,6 +8,7 @@ import java.util.UUID;
 public class CrimeLab {
     private ArrayList<Crime> mCrimes;
 
+    public static UUID mSelectedCrimeId;
     private static CrimeLab sCrimeLab;
     private Context mAppContext;
 

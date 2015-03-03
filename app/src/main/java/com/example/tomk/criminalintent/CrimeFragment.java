@@ -3,6 +3,8 @@ package com.example.tomk.criminalintent;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -52,7 +54,7 @@ public class CrimeFragment extends Fragment {
 
         mTitleField = (EditText) v.findViewById(R.id.crime_title);
         mTitleField.setText(mCrime.getTitle());
-        mTitleField.addTextChangedListener(new TextWatcher(){
+        mTitleField.addTextChangedListener(new TextWatcher() {
             public void onTextChanged(CharSequence c, int start, int before, int count) {
                 mCrime.setTitle(c.toString());
             }
@@ -62,7 +64,12 @@ public class CrimeFragment extends Fragment {
             }
 
             public void afterTextChanged(Editable c) {
-                //blank
+                if (CrimeLab.mSelectedCrimeId == mCrime.getID()) {
+                    if (getActivity() != null) {
+                        ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
+                        actionBar.setTitle(c.toString());
+                    }
+                }
             }
         });
         mDateButton = (Button) v.findViewById(R.id.crime_date);
