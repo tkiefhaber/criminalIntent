@@ -2,7 +2,8 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+    android:layout_margin="64dp">
 
     <CheckBox
         android:id="@+id/crime_list_item_solvedCheckBox"
@@ -20,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/crime_list_item_solvedCheckBox"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
@@ -31,6 +33,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/crime_list_item_titleTextView"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
         android:padding="4dp"
         android:text="Crime Date"
     />
