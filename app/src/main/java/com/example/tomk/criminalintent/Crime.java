@@ -1,5 +1,8 @@
 package com.example.tomk.criminalintent;
 
+import android.graphics.Bitmap;
+import android.util.Log;
+
 import java.util.Date;
 import java.util.UUID;
 
@@ -8,6 +11,8 @@ public class Crime {
     private String mTitle;
     private Date mDate;
     private boolean mSolved;
+    private String mSuspect;
+    private Bitmap mImageBitmap;
 
     public UUID getID() {
         return mID;
@@ -41,9 +46,26 @@ public class Crime {
         mSolved = solved;
     }
 
+    public String getSuspect() {
+        return mSuspect;
+    }
+
+    public void setSuspect(String suspect) {
+        mSuspect = suspect;
+    }
+
     public Crime() {
         mID = UUID.randomUUID();
         mDate = new Date();
+    }
+
+    public Bitmap getImageBitmap() {
+        return mImageBitmap;
+    }
+
+    public void setImageBitmap(Bitmap imageBitmap) {
+        mImageBitmap = imageBitmap;
+        Log.d("bitmap", imageBitmap.toString());
     }
 
     @Override
